@@ -39,15 +39,33 @@ class ViewController: UIViewController {
     let aNote = note(440.00, with: UIColor.blue)
     let bNote = note(493.88, with: UIColor.purple)
     
+    
+    /**
+        Running all actions.
+    
+        Passes choosed note to functions.
+    */
     func doAction(_ note: note) {
         setColor(note)
         playSound(note)
     }
+ 
+    /**
+     Set color according the note.
     
+     - Parameters:
+     - note: choosed note
+     */
     func setColor(_ note: note) {
         self.colorOutlet.backgroundColor = note.color
     }
-    
+ 
+    /**
+     Playing sound with oscillator.
+     
+     - Parameters:
+        - note: choosed note
+     */
     func playSound(_ note: note) {
         let oscillator = AKOscillator()
         AudioKit.output = oscillator
@@ -61,12 +79,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
