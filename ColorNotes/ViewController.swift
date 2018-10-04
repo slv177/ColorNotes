@@ -20,7 +20,13 @@ class ViewController: UIViewController {
     @IBAction func bButton(_ sender: Any) { doAction(bNote) }
     
     @IBOutlet weak var colorOutlet: UIView!
-    
+
+    /**
+     Structure for describing notes.
+     
+     Passes choosed note to functions.
+     Pattern Bridge.
+     */
     struct note {
         let tone: Double
         let color: UIColor
