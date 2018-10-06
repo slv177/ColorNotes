@@ -1,35 +1,43 @@
-//
-//  ViewController.swift
+// ViewController.swift
 //  ColorNotes
 //
 //  Created by SS on 16.9.18.
 //  Copyright © 2018 SS. All rights reserved.
 //
 
+
+/**  Что мне непонятно
+    - как реализовать звук по touchDown и прекращение по touchUp
+    - как расположить элементы в нужном порядке по оси Z
+    - как расположить черные клавиши
+*/
+
 import UIKit
 import AudioKit
 class ViewController: UIViewController {
     
-    @IBAction func cButton(_ sender: Any) { doAction(cNote) }
-    @IBAction func dButton(_ sender: Any) { doAction(dNote) }
-    @IBAction func eButton(_ sender: Any) { doAction(eNote) }
-    @IBAction func fButton(_ sender: Any) { doAction(fNote) }
-    @IBAction func gButton(_ sender: Any) { doAction(gNote) }
-    @IBAction func aButton(_ sender: Any) { doAction(aNote) }
-    @IBAction func bButton(_ sender: Any) { doAction(bNote) }
+    @IBAction func cButtonDown(_ sender: Any) {setColor(cNote)}
+    @IBAction func cButtonUp(_ sender: Any) {playSound(cNote)}
+    
+    @IBAction func dButtonDown(_ sender: UIButton) {setColor(dNote)}
+    @IBAction func dButtonUp(_ sender: UIButton) { playSound(dNote) }
+    
+    @IBAction func eButtonDown(_ sender: UIButton) {setColor(eNote)}
+    @IBAction func eButtonUp(_ sender: UIButton) { playSound(eNote) }
+    
+    @IBAction func fButtonDown(_ sender: UIButton) {setColor(fNote)}
+    @IBAction func fButtonUp(_ sender: UIButton) { playSound(fNote) }
+    
+    @IBAction func gButtonDown(_ sender: UIButton) {setColor(gNote)}
+    @IBAction func gButtonUp(_ sender: UIButton) { playSound(gNote) }
+    
+    @IBAction func aButtonDown(_ sender: UIButton) {setColor(aNote)}
+    @IBAction func aButtonUp(_ sender: UIButton) { playSound(aNote) }
+    
+    @IBAction func bButtonDown(_ sender: UIButton) {setColor(bNote)}
+    @IBAction func bButtonUp(_ sender: UIButton) { playSound(bNote) }
     
     @IBOutlet weak var colorOutlet: UIView!
-    
-    
-    /**
-     Running all actions.
-     
-     Passes choosed note to functions.
-     */
-    func doAction(_ note: note) {
-        setColor(note)
-        playSound(note)
-    }
     
     /**
      Set color according the note.
@@ -59,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()    
     }
 
     override func didReceiveMemoryWarning() {
